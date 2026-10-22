@@ -1,0 +1,49 @@
+{
+  "$schema": "https://opencode.ai/schema.json",
+  "version": "2.0",
+  
+  "skills": {
+    "playwright-cli": {
+      "description": "Automate browser interactions, test web pages and work with Playwright tests",
+      "file": "../.claude/skills/playwright-cli"
+    },
+    "playwright-tests-best-practices": {
+      "description": "Team best practices and coding standards for Playwright tests",
+      "file": "../.claude/skills/playwright-tests-best-practices"
+    }
+  },
+
+  "defaults": {
+    "model": "qwen3.5"
+  },
+
+  "context": {
+    "files": [
+      "README.md",
+      "AGENTS.md",
+      "requirements.txt",
+      "pytest.ini"
+    ]
+  },
+
+  "tools": {
+    "webfetch": true,
+    "shell": true,
+    "read": true,
+    "write": true,
+    "edit": true,
+    "glob": true,
+    "grep": true
+  },
+
+  "permissions": {
+    "shell": {
+      "allow": ["pytest", "pip", "docker", "playwright"],
+      "deny": ["sudo", "rm -rf", "curl | bash"]
+    },
+    "write": {
+      "allow": ["tests/**", "*.md", "*.txt", "*.ini", "*.py"],
+      "deny": ["**/node_modules/**", "**/.git/**"]
+    }
+  }
+}
