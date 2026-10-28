@@ -22,7 +22,9 @@
       "README.md",
       "AGENTS.md",
       "requirements.txt",
-      "pytest.ini"
+      "pytest.ini",
+      ".claude/skills/playwright-tests-best-practices/SKILL.md",
+      ".claude/skills/playwright-tests-best-practices/references/naming_functions.md"
     ]
   },
 
